@@ -20,6 +20,7 @@ spec:
       containers:
       - name: my-container
         image: s4432496/my_image1:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         resources:
