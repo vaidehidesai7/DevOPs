@@ -18,7 +18,7 @@ spec:
         app: my-app
     spec:
       containers:
-      - name: my_container
+      - name: my-container
         image: s4432496/my_image1:latest
         ports:
         - containerPort: 80
