@@ -32,9 +32,10 @@ pipeline {
                 sh 'kubectl apply -f deployment.yaml'
                 sh 'kubectl apply -f service.yaml'
                 sh 'kubectl rollout restart deployment my-app-deployment'
+                sh 'kubectl rollout status deployment/my-app-deployment --timeout=60s'
                 sh 'pkill -f "kubectl port-forward" || true'
                 sh 'JENKINS_NODE_COOKIE=dontKillMe nohup kubectl port-forward --address 0.0.0.0 service/my-app-service 30007:80 > pf.log 2>&1 &'
-                sh 'sleep 2'
+                sh 'sleep 5'
             }
         }
     }
