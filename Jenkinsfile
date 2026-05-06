@@ -32,6 +32,7 @@ pipeline {
                 sh 'kubectl apply -f deployment.yaml'
                 sh 'kubectl apply -f service.yaml'
                 sh 'kubectl rollout restart deployment my-app-deployment'
+                sh 'nohup kubectl port-forward --address 0.0.0.0 service/my-app-service 30007:80 > pf.log 2>&1 &'
             }
         }
     }
