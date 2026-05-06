@@ -31,6 +31,7 @@ pipeline {
                 //deploying using kubectl
                 sh 'kubectl apply -f deployment.yaml'
                 sh 'kubectl apply -f service.yaml'
+                sh 'kubectl rollout restart deployment my-app-deployment'
             }
         }
     }
