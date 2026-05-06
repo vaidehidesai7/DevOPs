@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaidehi Desai | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS FROM styles.css */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+        body{
+            line-height:1.6;
+            color:#333;
+        }
+        a{
+            text-decoration:none;
+            color:inherit;
+        }
+        header{
+            position:fixed;
+            width:100%;
+            background:white;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+            z-index:1000;
+        }
+        .navbar{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 10%;
+        }
+        .nav-links{
+            list-style:none;
+            display:flex;
+            gap:20px;
+        }
+        .nav-links a{
+            font-weight:500;
+            transition:0.3s;
+        }
+        .nav-links a:hover{
+            color:#6c63ff;
+        }
+        .menu-toggle{
+            display:none;
+            font-size:28px;
+            cursor:pointer;
+        }
+        .hero{
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            background:linear-gradient(135deg,#6c63ff,#9f7aea);
+            color:white;
+            padding:20px;
+        }
+        .hero h1{
+            font-size:48px;
+            margin-bottom:10px;
+        }
+        .hero span{
+            color:#ffd369;
+        }
+        .hero p{
+            margin:20px 0;
+        }
+        .btn{
+            display:inline-block;
+            padding:12px 25px;
+            background:white;
+            color:#6c63ff;
+            border-radius:30px;
+            font-weight:600;
+            transition:0.3s;
+        }
+        .btn:hover{
+            transform:scale(1.05);
+        }
+        .section{
+            padding:100px 10%;
+            text-align:center;
+        }
+        .section h2{
+            font-size:32px;
+            margin-bottom:30px;
+        }
+        .skills-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+            gap:20px;
+        }
+        .skill-card{
+            background:#f4f4f4;
+            padding:20px;
+            border-radius:10px;
+            transition:0.3s;
+        }
+        .skill-card:hover{
+            background:#6c63ff;
+            color:white;
+            transform:translateY(-5px);
+        }
+        .projects-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:25px;
+        }
+        .project-card{
+            background:white;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+            overflow:hidden;
+            transition:0.3s;
+        }
+        .project-card img{
+            width:100%;
+        }
+        .project-card h3{
+            margin:15px;
+        }
+        .project-card p{
+            padding:0 15px 20px;
+        }
+        .project-card:hover{
+            transform:translateY(-10px);
+        }
+        .socials{
+            margin-top:20px;
+            display:flex;
+            justify-content:center;
+            gap:20px;
+        }
+        .socials a{
+            color:#6c63ff;
+            font-weight:600;
+        }
+        footer{
+            text-align:center;
+            padding:20px;
+            background:#f4f4f4;
+        }
+        .fade-in{
+            opacity:0;
+            transform:translateY(30px);
+            transition:all 0.8s ease;
+        }
+        .fade-in.show{
+            opacity:1;
+            transform:translateY(0);
+        }
+        @media(max-width:768px){
+            .nav-links{
+                position:absolute;
+                top:70px;
+                right:0;
+                background:white;
+                flex-direction:column;
+                width:200px;
+                display:none;
+                padding:20px;
+            }
+            .nav-links.active{
+                display:flex;
+            }
+            .menu-toggle{
+                display:block;
+            }
+            .hero h1{
+                font-size:34px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Vaidehi Desai</h2>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">&#9776;</div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm <span>Vaidehi Desai</span></h1>
+            <h3>Computer Science Student at London South Bank University</h3>
+            <p>Passionate about technology, software development, and creating innovative digital solutions.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section fade-in">
+        <h2>About Me</h2>
+        <p>I am a motivated student passionate about technology, software development, and innovation. I enjoy building projects, learning new programming languages, and solving real-world problems through code.</p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section fade-in">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">HTML</div>
+            <div class="skill-card">CSS</div>
+            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">Python</div>
+            <div class="skill-card">AI / Machine Learning</div>
+            <div class="skill-card">Git & GitHub</div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section fade-in">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>Short description of your project and what technologies you used.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>Short description of your project and its purpose.</p>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>Brief explanation of what the project does.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section fade-in">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:vdesai@lsbu.ac.uk">vdesai@lsbu.ac.uk</a></p>
+        <div class="socials">
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">GitHub</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Vaidehi Desai</p>
+    </footer>
+
+    <script>
+        // JAVASCRIPT FROM script.js
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+
+        const faders = document.querySelectorAll(".fade-in");
+        const appearOptions = { threshold: 0.2 };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if(!entry.isIntersecting) return;
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+</html>
